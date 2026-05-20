@@ -8,44 +8,89 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" href="../images/logo.png" type="image/png" />
   <style>
-    .mobilize-embed {
+    .events-hero-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      border-radius: var(--radius-lg);
+      padding: 64px 48px;
+      text-align: center;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .events-hero-box::before {
+      content: '📅';
+      position: absolute;
+      font-size: 12rem;
+      opacity: 0.05;
+      right: -20px;
+      top: -20px;
+      line-height: 1;
+    }
+    .events-hero-box h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .events-hero-box p {
+      color: var(--sky);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .events-hero-box .btn-primary {
+      font-size: 1.1rem;
+      padding: 16px 48px;
+    }
+    .events-hero-box .mobilize-url {
+      display: block;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: rgba(200,217,238,0.6);
+    }
+    .events-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .events-info-card {
       background: var(--white);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
       border: 1px solid var(--sky);
-      min-height: 600px;
+      border-top: 4px solid var(--gold);
     }
-    .mobilize-embed iframe {
-      width: 100%;
-      min-height: 700px;
-      border: none;
-      display: block;
-    }
-    .events-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 48px;
-      align-items: center;
-    }
-    .events-intro-text h2 {
+    .events-info-card .eic-icon { font-size: 2rem; margin-bottom: 12px; }
+    .events-info-card h3 {
       font-family: var(--font-display);
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       color: var(--navy);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    .events-intro-text p { color: var(--gray); line-height: 1.7; }
-    .events-cta-box {
+    .events-info-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.65; }
+    .recurring-box {
       background: var(--cream);
       border-radius: var(--radius-lg);
-      padding: 28px;
-      border-left: 4px solid var(--gold);
+      padding: 36px 40px;
+      border-left: 5px solid var(--gold);
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
     }
-    .events-cta-box h3 { font-family: var(--font-display); color: var(--navy); margin-bottom: 8px; }
-    .events-cta-box p { font-size: 0.92rem; color: var(--gray); margin-bottom: 16px; }
-    @media (max-width: 720px) {
-      .events-intro { grid-template-columns: 1fr; }
+    .recurring-box .rb-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .recurring-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .recurring-box p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; }
+    @media (max-width: 680px) {
+      .events-hero-box { padding: 40px 24px; }
+      .recurring-box { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
@@ -116,32 +161,60 @@
   <section class="section">
     <div class="container">
 
-      <div class="events-intro">
-        <div class="events-intro-text">
-          <h2>Get out there. Show up. Make a difference.</h2>
-          <p>All of our events are managed through <strong>Mobilize</strong>, a free platform for Democratic organizing. You can RSVP, get reminders, and find everything on their easy-to-use calendar below.</p>
-          <p style="margin-top:12px;">Can't make it to an event but want to help? <a href="get-involved.html">Check out other ways to get involved.</a></p>
-        </div>
-        <div class="events-cta-box">
-          <h3>📅 RSVP on Mobilize</h3>
-          <p>Our full event calendar is hosted on Mobilize. Click any event to RSVP and get updates sent directly to you.</p>
-          <a href="https://www.mobilize.us/wellscountydemocraticparty/" target="_blank" rel="noopener" class="btn btn-primary">Open Full Mobilize Calendar →</a>
+      <!-- MAIN MOBILIZE CTA -->
+      <div class="events-hero-box">
+        <h2>See All Upcoming Events</h2>
+        <p>Our full event calendar is hosted on Mobilize. RSVP, get reminders, and find everything you need to show up and make a difference.</p>
+        <a href="https://www.mobilize.us/wellscountydemocraticparty/?org_ids=9046" target="_blank" rel="noopener" class="btn btn-primary">
+          📅 View All Events on Mobilize →
+        </a>
+        <span class="mobilize-url">mobilize.us/wellscountydemocraticparty</span>
+      </div>
+
+      <!-- RECURRING EVENT HIGHLIGHT -->
+      <div class="recurring-box" style="margin-bottom: 48px;">
+        <div class="rb-icon">🗣️</div>
+        <div>
+          <h3>Let's Talk Tuesday</h3>
+          <p>Every Tuesday, Wells County Democrats gather to do what democracy runs on — conversation. Let's Talk Tuesday is an informal, open meetup where neighbors come together to discuss current events, share ideas, organize around issues that matter, and simply connect with like-minded people in our community. No agenda, no pressure — just good people having real conversations about the things that affect our lives here in Wells County. Whether you're a lifelong Democrat or just curious about getting involved, you're welcome at the table.</p>
+          <em style="font-size:0.9rem; color:var(--blue); font-weight:600;">Democracy works better when we talk to each other.</em>
+          <div style="margin-top:16px;">
+            <a href="https://www.mobilize.us/wellscountydemocraticparty/?org_ids=9046" target="_blank" rel="noopener" class="btn btn-navy">RSVP on Mobilize →</a>
+          </div>
         </div>
       </div>
 
-      <!-- Mobilize Embed -->
-      <div class="mobilize-embed">
-        <iframe
-          src="https://www.mobilize.us/wellscountydemocraticparty/?org_ids=9046"
-          title="Wells County Democrats Events"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
+      <!-- INFO CARDS -->
+      <div class="section-label">What to Expect</div>
+      <h2 class="section-title" style="margin-bottom:32px;">Get Involved at Our Events</h2>
+      <div class="events-info-grid">
+        <div class="events-info-card">
+          <div class="eic-icon">🤝</div>
+          <h3>Monthly Meetings</h3>
+          <p>Our regular monthly meetings are open to all Wells County Democrats. Come meet your neighbors, hear updates, and have your voice heard in party decisions.</p>
+        </div>
+        <div class="events-info-card">
+          <div class="eic-icon">📱</div>
+          <h3>Phone & Text Banks</h3>
+          <p>Help us reach voters across Wells County from the comfort of your home. Training provided — no experience necessary. Every call and text makes a difference.</p>
+        </div>
+        <div class="events-info-card">
+          <div class="eic-icon">🗳️</div>
+          <h3>Voter Registration Drives</h3>
+          <p>Join us at community events to help Wells County residents register to vote and learn about their voting rights. Democracy starts here.</p>
+        </div>
+        <div class="events-info-card">
+          <div class="eic-icon">🙋</div>
+          <h3>Volunteer Events</h3>
+          <p>From canvassing to literature drops to community outreach — there are always ways to pitch in and make a real impact in your neighborhood.</p>
+        </div>
       </div>
 
-      <p style="text-align:center; margin-top:20px; color:var(--gray); font-size:0.88rem;">
-        Events not loading? <a href="https://www.mobilize.us/wellscountydemocraticparty/" target="_blank">View directly on Mobilize →</a>
-      </p>
+      <!-- SECONDARY MOBILIZE LINK -->
+      <div style="text-align:center; padding: 40px; background: var(--gray-light); border-radius: var(--radius-lg);">
+        <p style="color:var(--gray); margin-bottom:18px; font-size:1rem;">Don't miss an event — follow us on Mobilize to get notified when new events are added.</p>
+        <a href="https://www.mobilize.us/wellscountydemocraticparty/?org_ids=9046" target="_blank" rel="noopener" class="btn btn-primary">Follow Us on Mobilize →</a>
+      </div>
 
     </div>
   </section>
