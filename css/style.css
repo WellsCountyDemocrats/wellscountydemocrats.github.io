@@ -310,11 +310,14 @@ a:hover { color: var(--navy); }
 .hero-logo-wrap {
   background: transparent;
   border: none;
-  padding: 20px;
+  padding: 0;
   animation: floatUp 0.8s ease both;
-  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.35));
 }
-.hero-logo-wrap img { width: 300px; max-width: 100%; }
+.hero-logo-wrap img {
+  width: 320px;
+  max-width: 100%;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+}
 
 @keyframes floatUp {
   from { opacity: 0; transform: translateY(24px); }
