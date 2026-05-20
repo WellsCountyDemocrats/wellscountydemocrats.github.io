@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Wells County Democratic Party</title>
+  <meta name="description" content="Upcoming events for the Wells County Democratic Party — meetings, volunteer events, rallies, and more." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <style>
+    .mobilize-embed {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      border: 1px solid var(--sky);
+      min-height: 600px;
+    }
+    .mobilize-embed iframe {
+      width: 100%;
+      min-height: 700px;
+      border: none;
+      display: block;
+    }
+    .events-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+      align-items: center;
+    }
+    .events-intro-text h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .events-intro-text p { color: var(--gray); line-height: 1.7; }
+    .events-cta-box {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border-left: 4px solid var(--gold);
+    }
+    .events-cta-box h3 { font-family: var(--font-display); color: var(--navy); margin-bottom: 8px; }
+    .events-cta-box p { font-size: 0.92rem; color: var(--gray); margin-bottom: 16px; }
+    @media (max-width: 720px) {
+      .events-intro { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>📍 119 S. Johnson St., Bluffton, Indiana 46714</span>
+      <div class="topbar-socials">
+        <a href="https://www.facebook.com/wellscodems/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/wellscodems/" target="_blank">Instagram</a>
+        <a href="https://x.com/wellscodems" target="_blank">X / Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/logo.png" alt="Wells County Democratic Party" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="about.html">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li class="dropdown">
+          <a href="get-involved.html">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+            <li><a href="get-involved.html#phone-bank">Phone/Text Bank</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="voter-info.html">Voter Info ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank">Absentee Application</a></li>
+            <li><a href="http://iga.in.gov/legislative/find-legislators/" target="_blank">Find Your Legislator</a></li>
+            <li><a href="voter-info.html">All Voter Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://secure.actblue.com/donate/wellscodems" target="_blank" class="nav-donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / Events</div>
+      <h1>Upcoming Events</h1>
+      <p>Join us — there's always something happening in Wells County. All are welcome.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="events-intro">
+        <div class="events-intro-text">
+          <h2>Get out there. Show up. Make a difference.</h2>
+          <p>All of our events are managed through <strong>Mobilize</strong>, a free platform for Democratic organizing. You can RSVP, get reminders, and find everything on their easy-to-use calendar below.</p>
+          <p style="margin-top:12px;">Can't make it to an event but want to help? <a href="get-involved.html">Check out other ways to get involved.</a></p>
+        </div>
+        <div class="events-cta-box">
+          <h3>📅 RSVP on Mobilize</h3>
+          <p>Our full event calendar is hosted on Mobilize. Click any event to RSVP and get updates sent directly to you.</p>
+          <a href="https://www.mobilize.us/wellscountydemocraticparty/" target="_blank" rel="noopener" class="btn btn-primary">Open Full Mobilize Calendar →</a>
+        </div>
+      </div>
+
+      <!-- Mobilize Embed -->
+      <div class="mobilize-embed">
+        <iframe
+          src="https://www.mobilize.us/wellscountydemocraticparty/?is_widget=1"
+          title="Wells County Democrats Events"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <p style="text-align:center; margin-top:20px; color:var(--gray); font-size:0.88rem;">
+        Events not loading? <a href="https://www.mobilize.us/wellscountydemocraticparty/" target="_blank">View directly on Mobilize →</a>
+      </p>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Wells County Democrats" />
+          <p>Upholding Democratic beliefs and values in Wells County, Indiana.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/wellscodems/" target="_blank" title="Facebook">f</a>
+            <a href="https://www.instagram.com/wellscodems/" target="_blank" title="Instagram">in</a>
+            <a href="https://x.com/wellscodems" target="_blank" title="X">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Voter Info</h4>
+          <ul>
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="voter-info.html">All Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>119 S. Johnson St., Bluffton, Indiana 46714</div>
+        <div>
+          <p>Paid for by the Wells County Democratic Party. Not authorized by any candidate or candidate committee.</p>
+          <p>© 2025 Wells County Democratic Party</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

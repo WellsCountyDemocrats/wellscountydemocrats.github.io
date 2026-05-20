@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Wells County Democratic Party</title>
+  <meta name="description" content="Get in touch with the Wells County Democratic Party. We'd love to hear from you." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info-card {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      position: sticky;
+      top: 90px;
+    }
+    .contact-info-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
+    .contact-detail-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-detail-text { font-size: 0.93rem; color: var(--sky); line-height: 1.6; }
+    .contact-detail-text strong { display: block; color: var(--white); font-weight: 700; margin-bottom: 2px; }
+    .contact-detail-text a { color: var(--gold); }
+    .contact-detail-text a:hover { color: var(--white); }
+    .contact-socials { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(200,217,238,0.2); }
+    .contact-socials h4 { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .contact-socials-links { display: flex; flex-direction: column; gap: 10px; }
+    .contact-socials-links a { color: var(--sky); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+    .contact-socials-links a:hover { color: var(--gold); }
+
+    /* Formspree form */
+    .contact-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 40px;
+      border: 1px solid var(--sky);
+    }
+    .contact-form-wrap h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .contact-form-wrap p { color: var(--gray); font-size: 0.93rem; margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--sky);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color var(--transition);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit { margin-top: 8px; }
+    .form-submit button {
+      width: 100%;
+      padding: 15px 32px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .form-submit button:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .form-note { font-size: 0.8rem; color: var(--gray); margin-top: 10px; text-align: center; }
+    @media (max-width: 800px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info-card { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>📍 119 S. Johnson St., Bluffton, Indiana 46714</span>
+      <div class="topbar-socials">
+        <a href="https://www.facebook.com/wellscodems/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/wellscodems/" target="_blank">Instagram</a>
+        <a href="https://x.com/wellscodems" target="_blank">X / Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/logo.png" alt="Wells County Democratic Party" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="about.html">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </li>
+        <li><a href="events.html">Events</a></li>
+        <li class="dropdown">
+          <a href="get-involved.html">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+            <li><a href="get-involved.html#phone-bank">Phone/Text Bank</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="voter-info.html">Voter Info ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank">Absentee Application</a></li>
+            <li><a href="http://iga.in.gov/legislative/find-legislators/" target="_blank">Find Your Legislator</a></li>
+            <li><a href="voter-info.html">All Voter Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="https://secure.actblue.com/donate/wellscodems" target="_blank" class="nav-donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / Contact</div>
+      <h1>Contact Us</h1>
+      <p>Questions, ideas, or ready to get involved? We'd love to hear from you.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- INFO CARD -->
+        <div class="contact-info-card">
+          <h2>Get in Touch</h2>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Office Address</strong>
+              119 S. Johnson St.<br>Bluffton, Indiana 46714
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📧</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <a href="mailto:info@wellscountydemocraticparty.com">info@wellscountydemocraticparty.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📰</div>
+            <div class="contact-detail-text">
+              <strong>Stay Informed</strong>
+              <a href="https://wellscountydemocraticparty.us19.list-manage.com/subscribe?id=52face2c1d&u=3b9c7b6649019c45f92ebaa72" target="_blank">Subscribe to our newsletter</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">💛</div>
+            <div class="contact-detail-text">
+              <strong>Support Our Work</strong>
+              <a href="https://secure.actblue.com/donate/wellscodems" target="_blank">Donate via ActBlue</a>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <h4>Follow Us</h4>
+            <div class="contact-socials-links">
+              <a href="https://www.facebook.com/wellscodems/" target="_blank" rel="noopener">📘 Facebook — @wellscodems</a>
+              <a href="https://www.instagram.com/wellscodems/" target="_blank" rel="noopener">📸 Instagram — @wellscodems</a>
+              <a href="https://x.com/wellscodems" target="_blank" rel="noopener">𝕏 Twitter/X — @wellscodems</a>
+              <a href="https://www.facebook.com/groups/288982857950799/" target="_blank" rel="noopener">👥 Facebook Group — Join the Conversation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form-wrap">
+          <h2>Send Us a Message</h2>
+          <p>Fill out the form below and someone from our team will get back to you. You can also use this form to express interest in volunteering or running for office.</p>
+
+          <!--
+            SETUP NOTE: Replace YOUR_FORM_ID below with your Formspree form ID.
+            Sign up free at https://formspree.io — it takes 2 minutes.
+            Your form ID looks like: xpwzqabc
+          -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" required placeholder="Jane" />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" required placeholder="Smith" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="(260) 555-0000" />
+            </div>
+            <div class="form-group">
+              <label for="subject">I'm reaching out about…</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic</option>
+                <option value="volunteer">I want to volunteer</option>
+                <option value="run">I'm interested in running for office</option>
+                <option value="precinct">I want to be a precinct chair</option>
+                <option value="events">Question about an event</option>
+                <option value="press">Media / press inquiry</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us how we can help…"></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit">Send Message →</button>
+            </div>
+            <p class="form-note">We typically respond within 2–3 business days. Your information is never shared or sold.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Wells County Democrats" />
+          <p>Upholding Democratic beliefs and values in Wells County, Indiana.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/wellscodems/" target="_blank" title="Facebook">f</a>
+            <a href="https://www.instagram.com/wellscodems/" target="_blank" title="Instagram">in</a>
+            <a href="https://x.com/wellscodems" target="_blank" title="X">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Voter Info</h4>
+          <ul>
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="voter-info.html">All Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>119 S. Johnson St., Bluffton, Indiana 46714</div>
+        <div>
+          <p>Paid for by the Wells County Democratic Party. Not authorized by any candidate or candidate committee.</p>
+          <p>© 2025 Wells County Democratic Party</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

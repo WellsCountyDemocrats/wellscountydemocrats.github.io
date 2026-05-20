@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voter Information — Wells County Democratic Party</title>
+  <meta name="description" content="Everything you need to vote in Wells County, Indiana — register, find your polling place, request an absentee ballot, and more." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <style>
+    .voter-resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    .voter-resource-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
+      border: 1px solid var(--sky);
+      border-top: 4px solid var(--blue);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .voter-resource-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .voter-resource-card .vr-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .voter-resource-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .voter-resource-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.65; flex: 1; margin-bottom: 18px; }
+    .voter-resource-card a.resource-btn {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: all var(--transition);
+      text-align: center;
+    }
+    .voter-resource-card a.resource-btn:hover { background: var(--blue); color: var(--white); }
+    .deadlines-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.93rem;
+    }
+    .deadlines-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 18px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+    }
+    .deadlines-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--sky);
+      color: var(--gray-dark);
+    }
+    .deadlines-table tr:nth-child(even) td { background: var(--gray-light); }
+    .deadline-note {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: var(--gray-dark);
+      border-left: 3px solid var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>📍 119 S. Johnson St., Bluffton, Indiana 46714</span>
+      <div class="topbar-socials">
+        <a href="https://www.facebook.com/wellscodems/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/wellscodems/" target="_blank">Instagram</a>
+        <a href="https://x.com/wellscodems" target="_blank">X / Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/logo.png" alt="Wells County Democratic Party" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="about.html">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </li>
+        <li><a href="events.html">Events</a></li>
+        <li class="dropdown">
+          <a href="get-involved.html">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+            <li><a href="get-involved.html#phone-bank">Phone/Text Bank</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="voter-info.html" class="active">Voter Info ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank">Absentee Application</a></li>
+            <li><a href="http://iga.in.gov/legislative/find-legislators/" target="_blank">Find Your Legislator</a></li>
+            <li><a href="voter-info.html">All Voter Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://secure.actblue.com/donate/wellscodems" target="_blank" class="nav-donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / Voter Information</div>
+      <h1>Voter Information</h1>
+      <p>Your vote is your voice. Here's everything you need to register, prepare, and cast your ballot in Wells County.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Indiana Voter Resources</div>
+      <h2 class="section-title">How to Vote in Wells County</h2>
+      <p class="section-subtitle">All the official links and information you need — from registration to election day.</p>
+
+      <div class="voter-resource-grid">
+
+        <div class="voter-resource-card">
+          <div class="vr-icon">✅</div>
+          <h3>Register to Vote</h3>
+          <p>Check your registration status or register online through Indiana's official voter registration portal. You must be registered before the deadline to vote in any election.</p>
+          <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener" class="resource-btn">Go to Indiana Voters →</a>
+        </div>
+
+        <div class="voter-resource-card">
+          <div class="vr-icon">📬</div>
+          <h3>Absentee / Mail Ballot</h3>
+          <p>Indiana allows absentee voting for many reasons. Download and submit the absentee application form to receive your ballot by mail.</p>
+          <a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank" rel="noopener" class="resource-btn">Get Absentee Application →</a>
+        </div>
+
+        <div class="voter-resource-card">
+          <div class="vr-icon">📍</div>
+          <h3>Find Your Polling Place</h3>
+          <p>Look up your assigned polling location in Wells County. Bring a valid photo ID — it's required to vote in Indiana.</p>
+          <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener" class="resource-btn">Find Polling Location →</a>
+        </div>
+
+        <div class="voter-resource-card">
+          <div class="vr-icon">🏛️</div>
+          <h3>Find Your Legislators</h3>
+          <p>Look up your state representatives, state senators, and U.S. Congress members based on your home address.</p>
+          <a href="http://iga.in.gov/legislative/find-legislators/" target="_blank" rel="noopener" class="resource-btn">Find My Legislators →</a>
+        </div>
+
+        <div class="voter-resource-card">
+          <div class="vr-icon">🖥️</div>
+          <h3>Indiana Voter Portal</h3>
+          <p>Access all Indiana voter services in one place — registration, sample ballot, polling location, election results, and more.</p>
+          <a href="https://indianavoters.com" target="_blank" rel="noopener" class="resource-btn">Open Voter Portal →</a>
+        </div>
+
+        <div class="voter-resource-card">
+          <div class="vr-icon">📋</div>
+          <h3>Wells County Election Board</h3>
+          <p>Contact the Wells County Election Board directly for local voting questions, vote center locations, and official election information.</p>
+          <a href="https://www.wellscountyin.gov/departments/election_board/index.php" target="_blank" rel="noopener" class="resource-btn">Wells County Election Board →</a>
+        </div>
+
+      </div>
+
+      <!-- IMPORTANT DEADLINES -->
+      <div class="card">
+        <div class="section-label">Know Your Deadlines</div>
+        <h2 style="font-family:var(--font-display); font-size:1.5rem; color:var(--navy); margin-bottom:8px;">Indiana Voting Deadlines</h2>
+        <p style="color:var(--gray); font-size:0.92rem; margin-bottom:16px;">These are general Indiana deadlines — always verify specific dates at <a href="https://indianavoters.in.gov/" target="_blank">indianavoters.in.gov</a> for each election.</p>
+        <table class="deadlines-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Voter Registration (in person)</td>
+              <td>29 days before Election Day</td>
+            </tr>
+            <tr>
+              <td>Voter Registration (online)</td>
+              <td>29 days before Election Day</td>
+            </tr>
+            <tr>
+              <td>Absentee Application Deadline</td>
+              <td>12 days before Election Day (by mail)</td>
+            </tr>
+            <tr>
+              <td>Early / Absentee In-Person Voting</td>
+              <td>Begins 28 days before Election Day</td>
+            </tr>
+            <tr>
+              <td>Election Day Polls Open</td>
+              <td>6:00 AM – 6:00 PM (local time)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="deadline-note">
+          ⚠️ <strong>Reminder:</strong> Indiana requires a valid photo ID to vote. Acceptable IDs include Indiana driver's license, state ID card, U.S. military ID, or U.S. passport. Your name must appear on the ID.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEED A RIDE CTA -->
+  <section class="section section--cream">
+    <div class="container text-center">
+      <div class="section-label">We'll Get You There</div>
+      <h2 class="section-title">Need a Ride to the Polls?</h2>
+      <p class="section-subtitle">No Wells County Democrat should miss their chance to vote due to transportation. Contact us and we'll help connect you with a ride on election day.</p>
+      <a href="contact.html" class="btn btn-navy">Contact Us for a Ride →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Wells County Democrats" />
+          <p>Upholding Democratic beliefs and values in Wells County, Indiana.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/wellscodems/" target="_blank" title="Facebook">f</a>
+            <a href="https://www.instagram.com/wellscodems/" target="_blank" title="Instagram">in</a>
+            <a href="https://x.com/wellscodems" target="_blank" title="X">𝕏</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>119 S. Johnson St., Bluffton, Indiana 46714</div>
+        <div>
+          <p>Paid for by the Wells County Democratic Party. Not authorized by any candidate or candidate committee.</p>
+          <p>© 2025 Wells County Democratic Party</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
