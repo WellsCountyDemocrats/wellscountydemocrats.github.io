@@ -74,7 +74,7 @@ a:hover { color: var(--navy); }
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--gray);
-  max-width: 640px;
+  max-width: 780px;
   margin-bottom: 48px;
 }
 .section--navy .section-subtitle { color: var(--sky); }
@@ -566,7 +566,12 @@ footer {
   color: var(--white);
   margin-bottom: 10px;
 }
-.page-hero p { color: var(--sky); font-size: 1.05rem; max-width: 580px; }
+.page-hero p {
+  color: var(--sky);
+  font-size: 1.05rem;
+  max-width: 720px;
+  line-height: 1.6;
+}
 .breadcrumb {
   font-size: 0.82rem;
   color: rgba(200,217,238,0.6);
