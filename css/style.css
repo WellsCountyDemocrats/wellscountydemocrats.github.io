@@ -308,14 +308,13 @@ a:hover { color: var(--navy); }
   align-items: center;
 }
 .hero-logo-wrap {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  backdrop-filter: blur(4px);
+  background: transparent;
+  border: none;
+  padding: 20px;
   animation: floatUp 0.8s ease both;
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.35));
 }
-.hero-logo-wrap img { width: 280px; max-width: 100%; }
+.hero-logo-wrap img { width: 300px; max-width: 100%; }
 
 @keyframes floatUp {
   from { opacity: 0; transform: translateY(24px); }
