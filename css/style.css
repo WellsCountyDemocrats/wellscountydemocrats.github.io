@@ -372,7 +372,10 @@ a:hover { color: var(--navy); }
   padding: 36px 28px;
   border-top: 4px solid var(--blue);
   transition: all var(--transition);
+  cursor: pointer;
+  color: var(--text);
 }
+.pillar-card h3 { color: var(--navy); }
 .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .pillar-icon {
   width: 52px; height: 52px;

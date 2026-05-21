@@ -145,8 +145,17 @@
           </ul>
           <p>No experience necessary — we'll train you. What matters is your enthusiasm and commitment to Wells County.</p>
           <div class="cta-box">
-            <p><strong>Ready to volunteer?</strong> Fill out our volunteer form and we'll be in touch to find the right fit for you.</p>
-            <a href="https://www.mobilize.us/wellscountydemocraticparty/" target="_blank" rel="noopener" class="btn btn-primary">Sign Up to Volunteer →</a>
+            <p><strong>Ready to volunteer?</strong> Fill out the form below and we'll be in touch to find the right fit for you.</p>
+            <form action="https://api.web3forms.com/submit" method="POST" style="margin-top:14px;">
+              <input type="hidden" name="access_key" value="e99958c4-263d-4e2c-9478-b753308bc946" />
+              <input type="hidden" name="subject" value="Volunteer Sign-Up" />
+              <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+                <input type="text" name="name" placeholder="Your name" required style="flex:1; min-width:160px; padding:11px 14px; border:2px solid var(--sky); border-radius:var(--radius); font-family:var(--font-body); font-size:0.93rem;" />
+                <input type="email" name="email" placeholder="Email address" required style="flex:1; min-width:160px; padding:11px 14px; border:2px solid var(--sky); border-radius:var(--radius); font-family:var(--font-body); font-size:0.93rem;" />
+                <input type="tel" name="phone" placeholder="Phone (optional)" style="flex:1; min-width:160px; padding:11px 14px; border:2px solid var(--sky); border-radius:var(--radius); font-family:var(--font-body); font-size:0.93rem;" />
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">Sign Up to Volunteer →</button>
+            </form>
           </div>
         </div>
       </div>
@@ -168,8 +177,18 @@
             <li>Make a real, measurable difference in election outcomes</li>
           </ul>
           <div class="cta-box">
-            <p><strong>Sign up for our next phone/text bank session.</strong></p>
-            <a href="https://forms.gle/AjEWZMcpsqPhzxrw6" target="_blank" rel="noopener" class="btn btn-primary">Phone/Text Bank Sign-Up →</a>
+            <p><strong>Sign up for our next phone/text bank session.</strong> We'll reach out with session details.</p>
+            <form action="https://api.web3forms.com/submit" method="POST" style="margin-top:14px;">
+              <input type="hidden" name="access_key" value="e99958c4-263d-4e2c-9478-b753308bc946" />
+              <input type="hidden" name="subject" value="Phone/Text Bank Sign-Up" />
+              <input type="hidden" name="redirect" value="false" />
+              <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+                <input type="text" name="name" placeholder="Your name" required style="flex:1; min-width:160px; padding:11px 14px; border:2px solid var(--sky); border-radius:var(--radius); font-family:var(--font-body); font-size:0.93rem;" />
+                <input type="email" name="email" placeholder="Email address" required style="flex:1; min-width:160px; padding:11px 14px; border:2px solid var(--sky); border-radius:var(--radius); font-family:var(--font-body); font-size:0.93rem;" />
+                <input type="tel" name="phone" placeholder="Phone (optional)" style="flex:1; min-width:160px; padding:11px 14px; border:2px solid var(--sky); border-radius:var(--radius); font-family:var(--font-body); font-size:0.93rem;" />
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">Sign Up for Phone/Text Bank →</button>
+            </form>
           </div>
         </div>
       </div>
