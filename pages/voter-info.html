@@ -24,8 +24,11 @@
       transition: all var(--transition);
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
-    .voter-resource-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .voter-resource-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-top-color: var(--gold); }
     .voter-resource-card .vr-icon { font-size: 2.2rem; margin-bottom: 14px; }
     .voter-resource-card h3 {
       font-family: var(--font-display);
@@ -34,7 +37,8 @@
       margin-bottom: 10px;
     }
     .voter-resource-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.65; flex: 1; margin-bottom: 18px; }
-    .voter-resource-card a.resource-btn {
+    .voter-resource-card a.resource-btn,
+    .voter-resource-card span.resource-btn {
       display: inline-block;
       background: var(--navy);
       color: var(--white);
@@ -45,6 +49,7 @@
       transition: all var(--transition);
       text-align: center;
     }
+    .voter-resource-card:hover span.resource-btn,
     .voter-resource-card a.resource-btn:hover { background: var(--blue); color: var(--white); }
     .deadlines-table {
       width: 100%;
@@ -151,40 +156,40 @@
 
       <div class="voter-resource-grid">
 
-        <div class="voter-resource-card">
+        <a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank" rel="noopener" class="voter-resource-card">
           <div class="vr-icon">📬</div>
           <h3>Absentee / Mail Ballot</h3>
           <p>Indiana allows absentee voting for many reasons. Download and submit the absentee application form to receive your ballot by mail.</p>
-          <a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank" rel="noopener" class="resource-btn">Get Absentee Application →</a>
-        </div>
+          <span class="resource-btn">Get Absentee Application →</span>
+        </a>
 
-        <div class="voter-resource-card">
+        <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener" class="voter-resource-card">
           <div class="vr-icon">📍</div>
           <h3>Find Your Polling Place</h3>
           <p>Look up your assigned polling location in Wells County. Bring a valid photo ID. It's required to vote in Indiana.</p>
-          <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener" class="resource-btn">Find Polling Location →</a>
-        </div>
+          <span class="resource-btn">Find Polling Location →</span>
+        </a>
 
-        <div class="voter-resource-card">
+        <a href="http://iga.in.gov/legislative/find-legislators/" target="_blank" rel="noopener" class="voter-resource-card">
           <div class="vr-icon">🏛️</div>
           <h3>Find Your Legislators</h3>
           <p>Look up your state representatives, state senators, and U.S. Congress members based on your home address.</p>
-          <a href="http://iga.in.gov/legislative/find-legislators/" target="_blank" rel="noopener" class="resource-btn">Find My Legislators →</a>
-        </div>
+          <span class="resource-btn">Find My Legislators →</span>
+        </a>
 
-        <div class="voter-resource-card">
+        <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener" class="voter-resource-card">
           <div class="vr-icon">🖥️</div>
           <h3>Indiana Voter Portal</h3>
           <p>Access all Indiana voter services in one place, registration, sample ballot, polling location, election results, and more.</p>
-          <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener" class="resource-btn">Open Voter Portal →</a>
-        </div>
+          <span class="resource-btn">Open Voter Portal →</span>
+        </a>
 
-        <div class="voter-resource-card">
+        <a href="https://wellscounty.org/elections/" target="_blank" rel="noopener" class="voter-resource-card">
           <div class="vr-icon">📋</div>
           <h3>Wells County Election Board</h3>
           <p>Contact the Wells County Election Board directly for local voting questions, vote center locations, and official election information.</p>
-          <a href="https://wellscounty.org/elections/" target="_blank" rel="noopener" class="resource-btn">Wells County Election Board →</a>
-        </div>
+          <span class="resource-btn">Wells County Election Board →</span>
+        </a>
 
       </div>
 
