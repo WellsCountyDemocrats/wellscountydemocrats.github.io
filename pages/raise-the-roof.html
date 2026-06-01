@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raise the Roof Fundraiser, Wells County Democratic Party</title>
+  <meta name="description" content="Help the Wells County Democratic Party replace the roof at our headquarters at 119 S. Johnson St. in Bluffton. Goal: $25,000 by September 1, 2026." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <style>
+    .roof-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4a7f 100%);
+      padding: 64px 0 56px;
+      text-align: center;
+      color: var(--white);
+    }
+    .roof-hero .section-label { color: var(--gold); margin-bottom: 12px; }
+    .roof-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .roof-hero h1 span { color: var(--gold); }
+    .roof-hero p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+    /* Progress bar */
+    .progress-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      max-width: 640px;
+      margin: 0 auto 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+    .progress-raised {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+    .progress-goal {
+      font-size: 0.92rem;
+      color: var(--gray);
+      font-weight: 600;
+    }
+    .progress-bar-track {
+      background: var(--sky);
+      border-radius: 999px;
+      height: 18px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress-bar-fill {
+      background: linear-gradient(90deg, var(--blue), var(--gold));
+      height: 100%;
+      border-radius: 999px;
+      width: 4%;
+      transition: width 1.2s ease;
+    }
+    .progress-footnote {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+    .deadline-badge {
+      display: inline-block;
+      background: rgba(240,180,41,0.18);
+      color: var(--gold);
+      border: 1px solid rgba(240,180,41,0.4);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 28px;
+    }
+    /* Donate buttons */
+    .donate-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .btn-roof-donate {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 16px 40px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all var(--transition);
+      display: inline-block;
+    }
+    .btn-roof-donate:hover { background: var(--gold-dark); color: var(--navy); transform: translateY(-2px); }
+    .btn-roof-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all var(--transition);
+      display: inline-block;
+    }
+    .btn-roof-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+    /* Content sections */
+    .roof-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .roof-story-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--sky);
+      border-top: 4px solid var(--blue);
+    }
+    .roof-story-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .roof-story-card p {
+      color: var(--gray);
+      line-height: 1.75;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .roof-story-card p:last-child { margin-bottom: 0; }
+    .stat-row {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .stat-chip {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+    .stat-chip .stat-val {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--navy);
+      display: block;
+    }
+    .stat-chip .stat-lbl {
+      font-size: 0.78rem;
+      color: var(--gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    /* How to donate */
+    .donate-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .donate-method-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border: 1px solid var(--sky);
+      text-align: center;
+    }
+    .donate-method-card .dm-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .donate-method-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .donate-method-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; margin-bottom: 16px; }
+    .donate-method-card .dm-detail {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 8px 14px;
+      display: inline-block;
+    }
+    @media (max-width: 780px) {
+      .roof-content-grid { grid-template-columns: 1fr; }
+      .progress-wrap { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>📍 119 S. Johnson St. | PO Box 164, Bluffton, Indiana 46714</span>
+      <div class="topbar-socials">
+        <a href="https://www.facebook.com/wellscodems/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/wellscodems/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/logo.png" alt="Wells County Democratic Party" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="about.html">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="precinct-chairs.html">Precinct Chairs</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </li>
+        <li><a href="events.html">Events</a></li>
+        <li class="dropdown">
+          <a href="get-involved.html" class="active">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+            <li><a href="get-involved.html#phone-bank">Phone/Text Bank</a></li>
+            <li><a href="raise-the-roof.html">🏠 Raise the Roof</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="voter-info.html">Voter Info ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank">Absentee Application</a></li>
+            <li><a href="http://iga.in.gov/legislative/find-legislators/" target="_blank">Find Your Legislator</a></li>
+            <li><a href="voter-info.html">All Voter Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://secure.actblue.com/donate/wellscodems" target="_blank" class="nav-donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ROOF HERO -->
+  <div class="roof-hero">
+    <div class="container">
+      <div class="breadcrumb" style="color:rgba(255,255,255,0.6); margin-bottom:20px;">
+        <a href="../index.html" style="color:rgba(255,255,255,0.6);">Home</a> / 
+        <a href="get-involved.html" style="color:rgba(255,255,255,0.6);">Get Involved</a> / Raise the Roof
+      </div>
+      <div class="section-label">Fundraising Campaign</div>
+      <h1>Help Us <span>Raise the Roof</span></h1>
+      <p>Our headquarters at 119 S. Johnson St. needs a new roof. Help us protect this historic building and keep Wells County Democrats organized and active.</p>
+
+      <div class="deadline-badge">⏰ Deadline: September 1, 2026</div>
+
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span class="progress-raised">$1,000 raised</span>
+          <span class="progress-goal">Goal: $25,000</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-footnote">
+          <span>4% of goal reached</span>
+          <span>$24,000 remaining</span>
+        </div>
+      </div>
+
+      <div class="donate-actions">
+        <a href="https://secure.actblue.com/donate/wcdproof" target="_blank" rel="noopener" class="btn-roof-donate">
+          💛 Donate Online via ActBlue
+        </a>
+        <a href="#how-to-donate" class="btn-roof-outline">Other Ways to Give</a>
+      </div>
+      <p style="font-size:0.82rem; opacity:0.6; margin-top:8px;">Secure donation processed through ActBlue.</p>
+    </div>
+  </div>
+
+  <!-- THE STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">The Story</div>
+      <h2 class="section-title">Why We Need Your Help</h2>
+      <p class="section-subtitle">A historic building, a critical need, and a community ready to step up.</p>
+
+      <div class="roof-content-grid">
+        <div class="roof-story-card">
+          <h3>🏛️ A Historic Building</h3>
+          <p>Located on Lot 86 of the 1838 Original Plat of Bluffton, the building at 119 S. Johnson St. was built around 1876. Over nearly 150 years, it has been home to a tin shop, saloon, grocery store, doctor's office, home furnishings store, jewelry store, and beauty salon.</p>
+          <p>Today it serves as the headquarters for the Wells County Democratic Party, and an integral part of the downtown district of Bluffton.</p>
+        </div>
+        <div class="roof-story-card">
+          <h3>🔧 The Problem</h3>
+          <p>The weathered black rubber membrane roofing system is in critical need of replacement. It may be out of sight, but it is no longer out of mind.</p>
+          <p>Roofing quotes received in February 2026 came in between <strong>$18,500 and $25,000</strong>. The final price may increase. We need to complete this project before winter arrives.</p>
+          <div class="stat-row">
+            <div class="stat-chip">
+              <span class="stat-val">$25,000</span>
+              <span class="stat-lbl">Campaign Goal</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-val">$5,600</span>
+              <span class="stat-lbl">Bluffton NOW! Grant</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-val">Sept 1</span>
+              <span class="stat-lbl">Deadline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="roof-story-card" style="border-top-color: var(--gold); margin-bottom: 0;">
+        <h3>💛 Community Support Already in Motion</h3>
+        <p>On Tuesday, March 24, the Bluffton Board of Works approved a request presented by Bluffton NOW! to help fund this roof replacement project. The amount granted was $5,600, which will be reimbursed once the project is completed and paid. This money needs to be spent before the end of 2026.</p>
+        <p>The Wells County Democratic Party is now launching this fundraising campaign to close the remaining gap and protect this community landmark for years to come. Every contribution, large or small, gets us closer to the goal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DONATE -->
+  <section class="section section--gray" id="how-to-donate">
+    <div class="container">
+      <div class="section-label">Ways to Give</div>
+      <h2 class="section-title">How to Donate</h2>
+      <p class="section-subtitle">Choose the method that works best for you. Every dollar goes directly toward the roof replacement.</p>
+
+      <div class="donate-methods">
+
+        <div class="donate-method-card">
+          <div class="dm-icon">💻</div>
+          <h4>Donate Online</h4>
+          <p>Fast, secure, and easy. Use our ActBlue fundraising page to make a one-time or recurring donation by credit or debit card.</p>
+          <a href="https://secure.actblue.com/donate/wcdproof" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; text-align:center;">Donate via ActBlue →</a>
+        </div>
+
+        <div class="donate-method-card">
+          <div class="dm-icon">✉️</div>
+          <h4>Mail a Check</h4>
+          <p>Make your check payable to <strong>Wells County Democratic Party</strong> and write <strong>"Roof Fund"</strong> in the memo line.</p>
+          <div class="dm-detail">
+            Wells County Democratic Party<br>
+            P.O. Box 164<br>
+            Bluffton, IN 46714
+          </div>
+        </div>
+
+        <div class="donate-method-card">
+          <div class="dm-icon">🤝</div>
+          <h4>Drop It Off</h4>
+          <p>Stop by our headquarters and drop off a check or cash in person. We also do Tuesday get-togethers at 6 PM, open to everyone.</p>
+          <div class="dm-detail">
+            119 S. Johnson St.<br>
+            Bluffton, IN 46714
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section class="section section--cream">
+    <div class="container text-center">
+      <div class="section-label">Questions?</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">We're happy to answer any questions about the fundraiser or the project.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:8px;">
+        <div style="background:var(--white); border-radius:var(--radius-lg); padding:24px 32px; border:1px solid var(--sky); min-width:240px;">
+          <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">Fundraiser Questions</div>
+          <a href="mailto:treasurer@wellscountydemocraticparty.com" style="color:var(--blue); font-size:0.9rem;">treasurer@wellscountydemocraticparty.com</a>
+        </div>
+        <div style="background:var(--white); border-radius:var(--radius-lg); padding:24px 32px; border:1px solid var(--sky); min-width:240px;">
+          <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">General Questions</div>
+          <a href="mailto:wellschair@wellscountydemocraticparty.com" style="color:var(--blue); font-size:0.9rem;">wellschair@wellscountydemocraticparty.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Wells County Democrats" />
+          <p>Upholding Democratic beliefs and values in Wells County, Indiana.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/wellscodems/" target="_blank" title="Facebook">f</a>
+            <a href="https://www.instagram.com/wellscodems/" target="_blank" title="Instagram">in</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="precinct-chairs.html">Precinct Chairs</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+            <li><a href="raise-the-roof.html">Raise the Roof</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>119 S. Johnson St. | PO Box 164, Bluffton, Indiana 46714</div>
+        <div>
+          <p>Paid for by the Wells County Democratic Party. Not authorized by any candidate or candidate committee.</p>
+          <p>© 2026 Wells County Democratic Party</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Animate progress bar on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const fill = document.getElementById('progressFill');
+        if (fill) fill.style.width = '4%';
+      }, 300);
+    });
+  </script>
+</body>
+</html>

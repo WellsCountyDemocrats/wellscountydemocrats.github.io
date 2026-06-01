@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precinct Chairs, Wells County Democratic Party</title>
+  <meta name="description" content="Meet the Wells County Democratic Party precinct chairs, the neighborhood leaders connecting Democrats across all 22 precincts." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <style>
+    .map-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      border: 1px solid var(--sky);
+      margin-bottom: 56px;
+    }
+    .map-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .map-caption {
+      padding: 14px 20px;
+      background: var(--navy);
+      color: var(--sky);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+    .map-caption strong { color: var(--gold); }
+
+    .precinct-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .precinct-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 20px;
+      border: 1px solid var(--sky);
+      border-top: 4px solid var(--blue);
+      transition: all var(--transition);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .precinct-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .precinct-card.filled { border-top-color: var(--gold); }
+    .precinct-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--sky);
+    }
+    .precinct-avatar-placeholder {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--gray-light);
+      border: 2px solid var(--sky);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      color: var(--gray);
+    }
+    .precinct-info h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 3px;
+      line-height: 1.2;
+    }
+    .precinct-info .chair-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 2px;
+    }
+    .precinct-info .vacant {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+    .precinct-info .vacant a {
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+    .precinct-id {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+    .legend {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      padding: 16px 20px;
+      background: var(--gray-light);
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: 8px; }
+    .legend-dot {
+      width: 14px; height: 14px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .legend-dot.filled { background: var(--gold); }
+    .legend-dot.vacant { background: var(--blue); }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <span>📍 119 S. Johnson St. | PO Box 164, Bluffton, Indiana 46714</span>
+      <div class="topbar-socials">
+        <a href="https://www.facebook.com/wellscodems/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/wellscodems/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../images/logo.png" alt="Wells County Democratic Party" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="about.html" class="active">About ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="precinct-chairs.html">Precinct Chairs</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </li>
+        <li><a href="events.html">Events</a></li>
+        <li class="dropdown">
+          <a href="get-involved.html">Get Involved ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+            <li><a href="get-involved.html#phone-bank">Phone/Text Bank</a></li>
+            <li><a href="raise-the-roof.html">🏠 Raise the Roof</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="voter-info.html">Voter Info ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="https://indianavoters.in.gov/MVPHome/PrintDocuments" target="_blank">Absentee Application</a></li>
+            <li><a href="http://iga.in.gov/legislative/find-legislators/" target="_blank">Find Your Legislator</a></li>
+            <li><a href="voter-info.html">All Voter Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://secure.actblue.com/donate/wellscodems" target="_blank" class="nav-donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="about.html">About</a> / Precinct Chairs</div>
+      <h1>Precinct Chairs</h1>
+      <p>The backbone of the Wells County Democratic Party, neighborhood leaders connecting Democrats across all 22 precincts.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- MAP -->
+      <div class="section-label">Wells County, Indiana</div>
+      <h2 class="section-title">Precinct Map</h2>
+      <p class="section-subtitle">Use this map to find your township and precinct in Wells County.</p>
+
+      <div class="map-section">
+        <img src="../images/wells-county-map.png" alt="Wells County Indiana Township and Precinct Map" />
+        <div class="map-caption">
+          <strong>Wells County Road Map</strong>, County and Township Boundaries | Wells County GIS Department | Updated 2019
+        </div>
+      </div>
+
+      <!-- PRECINCT CHAIRS -->
+      <div class="section-label">Our Neighborhood Leaders</div>
+      <h2 class="section-title">Precinct Chair Directory</h2>
+      <p class="section-subtitle">We are actively recruiting chairs for all 22 precincts. Interested in serving your neighborhood? <a href="get-involved.html#precinct">Learn more →</a></p>
+
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot filled"></div> Chair in place</div>
+        <div class="legend-item"><div class="legend-dot vacant"></div> Seeking a chair</div>
+      </div>
+
+      <div class="precinct-grid">
+
+        <!-- FILLED -->
+        <div class="precinct-card filled">
+          <img src="../images/dylan-mcintosh.jpg" alt="Dylan McIntosh" class="precinct-avatar" />
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 19</div>
+            <h4>Rockcreek</h4>
+            <div class="chair-name">Dylan McIntosh</div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 12</div>
+            <h4>Ossian East</h4>
+            <div class="chair-name">John Bodner</div>
+          </div>
+        </div>
+
+        <!-- VACANT -->
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 01</div>
+            <h4>Bluffton Lancaster East</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 02</div>
+            <h4>Bluffton 02</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 03</div>
+            <h4>Bluffton 03</h4>
+            <div class="chair-name">Jake Reineck</div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 04</div>
+            <h4>Bluffton 04</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 05</div>
+            <h4>Bluffton 05</h4>
+            <div class="chair-name">Ian Richardson</div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 06</div>
+            <h4>Bluffton 06</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 07</div>
+            <h4>Bluffton Lancaster West</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 22</div>
+            <h4>Bluffton Lancaster 03</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 08</div>
+            <h4>Chester</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 09</div>
+            <h4>Harrison East</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 10</div>
+            <h4>Harrison West</h4>
+            <div class="chair-name">Rick Vitatoe</div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 11</div>
+            <h4>Jackson</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 13</div>
+            <h4>Jefferson East</h4>
+            <div class="chair-name">Joyce Kilbride</div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 14</div>
+            <h4>Jefferson West</h4>
+            <div class="chair-name">Chuck Kilbride</div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 15</div>
+            <h4>Lancaster East</h4>
+            <div class="chair-name">Tamara Wenning</div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 16</div>
+            <h4>Lancaster West</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 17</div>
+            <h4>Liberty</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 18</div>
+            <h4>Nottingham</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card">
+          <div class="precinct-avatar-placeholder">🗺️</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 20</div>
+            <h4>Union</h4>
+            <div class="vacant">Vacant, <a href="get-involved.html#precinct">Apply</a></div>
+          </div>
+        </div>
+
+        <div class="precinct-card filled">
+          <div class="precinct-avatar-placeholder">👤</div>
+          <div class="precinct-info">
+            <div class="precinct-id">Precinct 21</div>
+            <h4>Ossian West</h4>
+            <div class="chair-name">Tim Bradburn</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div style="text-align:center; margin-top:48px; padding:40px; background:var(--cream); border-radius:var(--radius-lg);">
+        <div class="section-label">Get Involved</div>
+        <h2 style="font-family:var(--font-display); font-size:1.6rem; color:var(--navy); margin-bottom:10px;">Become a Precinct Chair</h2>
+        <p style="color:var(--gray); max-width:520px; margin:0 auto 24px;">Precinct chairs are the most important volunteers in the party. Serve your neighborhood and help elect Democrats up and down the ballot.</p>
+        <a href="get-involved.html#precinct" class="btn btn-primary">Learn More →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Wells County Democrats" />
+          <p>Upholding Democratic beliefs and values in Wells County, Indiana.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/wellscodems/" target="_blank" title="Facebook">f</a>
+            <a href="https://www.instagram.com/wellscodems/" target="_blank" title="Instagram">in</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="precinct-chairs.html">Precinct Chairs</a></li>
+            <li><a href="about.html#platform">Our Platform</a></li>
+            <li><a href="about.html#candidates">Candidates</a></li>
+            <li><a href="press.html">Press Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+            <li><a href="get-involved.html#run">Run for Office</a></li>
+            <li><a href="get-involved.html#precinct">Precinct Chairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Voter Info</h4>
+          <ul>
+            <li><a href="https://indianavoters.in.gov/" target="_blank">Register to Vote</a></li>
+            <li><a href="voter-info.html">All Resources</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>119 S. Johnson St. | PO Box 164, Bluffton, Indiana 46714</div>
+        <div>
+          <p>Paid for by the Wells County Democratic Party. Not authorized by any candidate or candidate committee.</p>
+          <p>© 2026 Wells County Democratic Party</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
