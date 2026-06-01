@@ -286,15 +286,15 @@
 
       <div class="progress-wrap">
         <div class="progress-meta">
-          <span class="progress-raised">$1,000 raised</span>
+          <span class="progress-raised">$1,175 raised</span>
           <span class="progress-goal">Goal: $25,000</span>
         </div>
         <div class="progress-bar-track">
-          <div class="progress-bar-fill" id="progressFill"></div>
+          <div class="progress-bar-fill" id="progressFill" style="width:4.7%;"></div>
         </div>
         <div class="progress-footnote">
-          <span>4% of goal reached</span>
-          <span>$24,000 remaining</span>
+          <span>4.7% of goal reached</span>
+          <span>$23,825 remaining</span>
         </div>
       </div>
 
@@ -465,7 +465,7 @@
     window.addEventListener('load', () => {
       setTimeout(() => {
         const fill = document.getElementById('progressFill');
-        if (fill) fill.style.width = '4%';
+        if (fill) fill.style.width = '4.7%';
       }, 300);
     });
   </script>
