@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # Clear old FotMob cache\
+docker exec fpl-app python3 -c "\
+import sqlite3\
+db = sqlite3.connect('/app/data/fpl_league.db')\
+db.execute('DELETE FROM fotmob_cache')\
+db.commit()\
+count = db.execute('SELECT changes()').fetchone()[0]\
+print(f'Cleared \{count\} cached entries')\
+"\
+\
+# Re-cache all players\
+TOKEN=$(curl -s https://matchday.4ma.xyz/api/auth/login \\\
+  -H "Content-Type: application/json" \\\
+  -d '\{"email":"dylan@4ma.xyz","password\'94:\'94dandi444"\}' | python3 -c "import sys,json; print(json.load(sys.stdin)['token'])")\
+\
+curl -X POST https://matchday.4ma.xyz/api/fotmob/bulk-lookup \\\
+  -H "Authorization: Bearer $TOKEN"\
+\
+# Step 1: Login and get token\
+curl -s https://matchday.4ma.xyz/api/auth/login \\\
+  -H "Content-Type: application/json" \\\
+  -d '\{"email":"dylan@4ma.xyz","password\'94:\'94dandi444"\}'\
+\
+curl -s https://matchday.4ma.xyz/api/auth/login \\\
+  -H 'Content-Type: application/json' \\\
+  -d '\{"email":"dylan@4ma.xyz","password\'94:\'94dandi444\'94\}\'92\
+\
+\
+TOKEN=\'93eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiYWRtaW4iOnRydWUsImV4cCI6MTc4NTg2MTg2Nn0.pm4NRj6Yv5rRek6u3rSmHFL-Ew0PW4BLYHAuZEc_SdE" = $1"\
+curl -X POST https://matchday.4ma.xyz/api/fotmob/bulk-lookup \\\
+  -H "Authorization: Bearer $TOKEN"\
+\
+\
+\
+}
